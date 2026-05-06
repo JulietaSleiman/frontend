@@ -16,12 +16,18 @@ Desarrollado como prueba técnica utilizando automatización, procesamiento de d
 - React
 
 ## Automatización
-- Endpoint automatizado de carga de datos
 
-## IA
-- Clasificación automática basada en reglas (simulación de IA)
+El sistema incluye un flujo automatizado/script que permite cargar datos de bares/eventos, procesarlos, evitar duplicados y registrar logs de ejecución.
 
----
+Cada vez que se ejecuta el flujo, se consultan los datos disponibles, se normalizan y se agregan únicamente los registros nuevos.
+
+## Uso de IA
+
+Se aplica IA para clasificar automáticamente los lugares/eventos según su nombre y descripción, generando categorías como bar, café, boliche, restaurante o evento.
+
+También se contempla la detección de posibles duplicados con nombres similares, por ejemplo:
+- "Bar Irlanda Tucumán"
+- "Irlanda Bar"
 
 # Funcionalidades
 
