@@ -133,3 +133,55 @@
   font-size: 0.85rem;
   text-transform: capitalize;
 }
+
+.controls-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.search-input, .category-select {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input {
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.category-select {
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.category-select option {
+  background: #1e1b4b;
+  color: #f8fafc;
+}
+
+.search-input:focus, .category-select:focus {
+  border-color: #a855f7;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
