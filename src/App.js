@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
   const [lugares, setLugares] = useState([]);
@@ -11,28 +12,41 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: "30px", fontFamily: "Arial" }}>
-      <h1>Dashboard de bares/eventos de Tucumán</h1>
+    <div className="app-container">
+      <div className="header">
+        <h1>Explora Tucumán</h1>
+        <p>Dashboard de bares, restaurantes y eventos de la provincia</p>
+        <div className="stats-badge">Total descubiertos: {lugares.length}</div>
+      </div>
 
-      <p>Total cargados: {lugares.length}</p>
+      <div className="grid-container">
+        {lugares.map((lugar) => (
+          <div key={lugar.id} className="card">
+            <h3>{lugar.nombre}</h3>
+            
+            <div className="card-content">
+              <div className="info-row">
+                <strong>Ubicación</strong>
+                <span>{lugar.ubicacion}</span>
+              </div>
+              <div className="info-row">
+                <strong>Categoría</strong>
+                <span className="category-tag">{lugar.categoria}</span>
+              </div>
+              <div className="info-row">
+                <strong>Fuente</strong>
+                <span>{lugar.fuente}</span>
+              </div>
+            </div>
 
-      {lugares.map((lugar) => (
-        <div
-          key={lugar.id}
-          style={{
-            border: "1px solid #ccc",
-            padding: "15px",
-            marginBottom: "10px",
-            borderRadius: "8px",
-          }}
-        >
-          <h3>{lugar.nombre}</h3>
-          <p><strong>Ubicación:</strong> {lugar.ubicacion}</p>
-          <p><strong>Categoría:</strong> {lugar.categoria}</p>
-          <p><strong>Fuente:</strong> {lugar.fuente}</p>
-          <p><strong>Activo:</strong> {lugar.activo ? "Sí" : "No"}</p>
-        </div>
-      ))}
+            <div style={{ marginTop: '20px' }}>
+              <span className={`status-badge ${lugar.activo ? 'status-active' : 'status-inactive'}`}>
+                {lugar.activo ? "● Abierto / Activo" : "○ Inactivo"}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
