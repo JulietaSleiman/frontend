@@ -5,6 +5,19 @@ Sistema automatizado para obtener, procesar y administrar bares, restaurantes y 
 Desarrollado como prueba técnica utilizando automatización, procesamiento de datos, clasificación automática y dashboard web.
 
 ---
+# Capturas
+
+## Dashboard principal
+
+![Dashboard](./screenshots/dashboard.png)
+
+## Logs de automatización
+
+![Logs](./screenshots/logs.png)
+
+## Endpoint de lugares
+
+![API](./screenshots/api.png)
 
 # Tecnologías utilizadas
 
